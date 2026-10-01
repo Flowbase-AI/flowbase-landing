@@ -1,0 +1,480 @@
+/* Flowbase — cool shop-floor industrial */
+
+:root {
+  --floor: #f0f2f4;
+  --panel: #ffffff;
+  --ink: #14181e;
+  --ink-soft: #3d4654;
+  --aluminum: #8b949e;
+  --rule: #d4d9df;
+  --anodize: #1a6b6b;
+  --anodize-deep: #0f4a4a;
+  --chip: #c47a2c;
+  --hero-text: #f5f7f8;
+
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+
+  --space: clamp(1.25rem, 3vw, 2.5rem);
+  --measure: 38rem;
+  --wide: 68rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-content,
+  .hero-media {
+    animation: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--floor);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--anodize-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--anodize);
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--anodize);
+  outline-offset: 3px;
+}
+
+/* —— Header —— */
+
+.site-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem var(--space);
+  max-width: 90rem;
+  margin-inline: auto;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--hero-text);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.nav a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--hero-text) 88%, transparent);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--hero-text);
+}
+
+.nav-cta {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--hero-text) 45%, transparent);
+  color: var(--hero-text) !important;
+}
+
+.nav-cta:hover {
+  background: color-mix(in srgb, var(--hero-text) 12%, transparent);
+}
+
+/* —— Hero —— */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: var(--hero-text);
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=2400&q=80")
+      center 40% / cover no-repeat;
+  transform: scale(1.04);
+  animation: hero-drift 28s ease-in-out infinite alternate;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(12, 16, 22, 0.82) 0%,
+      rgba(12, 16, 22, 0.55) 48%,
+      rgba(12, 16, 22, 0.35) 100%
+    ),
+    linear-gradient(to top, rgba(12, 16, 22, 0.75) 0%, transparent 42%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(5.5rem, 12vh, 8rem) var(--space) clamp(3rem, 8vh, 5rem);
+  max-width: 42rem;
+  animation: hero-rise 0.9s ease-out both;
+}
+
+.brand {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 11vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+}
+
+.lede {
+  margin: 0 0 1.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--hero-text) 86%, transparent);
+  max-width: 34ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.15rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--anodize);
+  color: #fff;
+  border-color: var(--anodize);
+}
+
+.btn-primary:hover {
+  background: var(--anodize-deep);
+  border-color: var(--anodize-deep);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--hero-text);
+  border-color: color-mix(in srgb, var(--hero-text) 40%, transparent);
+}
+
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--hero-text) 10%, transparent);
+  color: var(--hero-text);
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-1.2%, -0.6%, 0);
+  }
+}
+
+/* —— Services —— */
+
+.services {
+  padding: clamp(3.5rem, 8vw, 6rem) var(--space);
+  max-width: var(--wide);
+  margin-inline: auto;
+}
+
+.section-intro {
+  max-width: var(--measure);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.section-intro h2,
+.process h2,
+.quote h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.section-intro p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.service-list li {
+  display: grid;
+  grid-template-columns: minmax(8rem, 14rem) 1fr;
+  gap: 1rem 2rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.service-list h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+
+.service-list p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--ink-soft);
+}
+
+/* —— Process —— */
+
+.process {
+  background: var(--ink);
+  color: var(--hero-text);
+  padding: clamp(3.5rem, 8vw, 5.5rem) var(--space);
+}
+
+.process-inner {
+  max-width: var(--wide);
+  margin-inline: auto;
+}
+
+.process h2 {
+  color: var(--hero-text);
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+}
+
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+}
+
+.steps li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--chip);
+}
+
+.steps h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.steps p {
+  margin: 0;
+  max-width: 32rem;
+  color: color-mix(in srgb, var(--hero-text) 72%, transparent);
+  font-size: 0.98rem;
+}
+
+/* —— Materials —— */
+
+.materials {
+  padding: 1.75rem var(--space);
+  border-bottom: 1px solid var(--rule);
+  background: var(--panel);
+}
+
+.materials-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--aluminum);
+}
+
+.materials-list {
+  margin: 0;
+  max-width: var(--wide);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* —— Quote —— */
+
+.quote {
+  padding: clamp(3.5rem, 8vw, 5.5rem) var(--space);
+}
+
+.quote-panel {
+  max-width: 34rem;
+}
+
+.quote p {
+  margin: 0 0 1.5rem;
+  color: var(--ink-soft);
+}
+
+.quote .btn-primary {
+  color: #fff;
+}
+
+/* —— Footer —— */
+
+.site-footer {
+  padding: 2rem var(--space) 2.5rem;
+  border-top: 1px solid var(--rule);
+  max-width: var(--wide);
+  margin-inline: auto;
+}
+
+.footer-brand {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.footer-meta,
+.footer-contact {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.footer-contact {
+  margin-top: 0.5rem;
+}
+
+.footer-contact a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--anodize);
+}
+
+/* —— Responsive —— */
+
+@media (max-width: 720px) {
+  .nav a:not(.nav-cta) {
+    display: none;
+  }
+
+  .service-list li {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .lede {
+    max-width: 40ch;
+  }
+}
+
+@media (min-width: 900px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .steps li {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
