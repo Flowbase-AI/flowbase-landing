@@ -1,20 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flowbase — Custom parts, cut to print</title>
+    <meta
+      name="description"
+      content="Flowbase makes precision parts from your drawings. CNC milling, turning, sheet metal, and finishing — prototype to production."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">Flowbase</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#quote" class="nav-cta">Request a quote</a>
+      </nav>
+    </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/flowbase-logo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowbase - Agentic workflows for financial clarity</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-</head>
+    <main>
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-media" role="img" aria-label="Metal being cut with a shower of sparks"></div>
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="brand">Flowbase</p>
+          <h1>Custom parts, cut to print.</h1>
+          <p class="lede">
+            Send a drawing. We machine, fabricate, and finish the part — from one-off
+            prototypes to steady production.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#quote">Request a quote</a>
+            <a class="btn btn-ghost" href="#services">See what we make</a>
+          </div>
+        </div>
+      </section>
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+      <section id="services" class="services">
+        <div class="section-intro">
+          <h2>What we make</h2>
+          <p>
+            Contract manufacturing for engineers who need parts that match the print —
+            tolerances held, surfaces finished, paperwork included.
+          </p>
+        </div>
 
+        <ul class="service-list">
+          <li>
+            <h3>CNC milling</h3>
+            <p>
+              3- and 5-axis work on aluminum, steel, stainless, and engineering plastics.
+              Tight pockets, complex contours, fixture-ready setups.
+            </p>
+          </li>
+          <li>
+            <h3>Turning</h3>
+            <p>
+              Shafts, bushings, threaded fittings, and live-tooling features. Small
+              diameters through large blanks.
+            </p>
+          </li>
+          <li>
+            <h3>Sheet metal</h3>
+            <p>
+              Laser cut, brake-formed, and welded assemblies. Enclosures, brackets,
+              panels, and frames.
+            </p>
+          </li>
+          <li>
+            <h3>Finishing</h3>
+            <p>
+              Anodize, powder coat, passivate, bead blast, and assembly. Ready for
+              install, not just inspection.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="process" class="process">
+        <div class="process-inner">
+          <h2>From file to finished part</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-num">1</span>
+              <div>
+                <h3>Send the drawing</h3>
+                <p>PDF, STEP, or SolidWorks. Call out material, finish, and quantity.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div>
+                <h3>Get a clear quote</h3>
+                <p>Price, lead time, and any print questions — usually within one business day.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div>
+                <h3>We cut and check</h3>
+                <p>Programmed on our floor, inspected to your tolerances, packed for ship.</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">4</span>
+              <div>
+                <h3>You receive parts</h3>
+                <p>Certificate of conformance with the shipment. Reorder the same job anytime.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="materials" aria-label="Materials">
+        <p class="materials-label">Materials we run every week</p>
+        <p class="materials-list">
+          Aluminum 6061 · 7075 · Stainless 304 · 316 · Mild steel · Tool steel · Brass ·
+          Delrin · Nylon · PEEK
+        </p>
+      </section>
+
+      <section id="quote" class="quote">
+        <div class="quote-panel">
+          <h2>Ready for a quote?</h2>
+          <p>
+            Email your drawing and quantity to
+            <a href="mailto:quotes@getflowbase.com">quotes@getflowbase.com</a>.
+            Include material, finish, and when you need parts on the dock.
+          </p>
+          <a class="btn btn-primary" href="mailto:quotes@getflowbase.com?subject=Quote%20request">
+            Email a drawing
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="footer-brand">Flowbase</p>
+      <p class="footer-meta">Precision contract manufacturing · Est. 1998</p>
+      <p class="footer-contact">
+        <a href="mailto:quotes@getflowbase.com">quotes@getflowbase.com</a>
+        · (555) 014-2200
+      </p>
+    </footer>
+  </body>
 </html>
